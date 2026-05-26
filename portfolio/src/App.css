@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #0f172a;
+  background: #eef2ff;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #ffffff, #e2e8f0 55%, #cbd5e1);
+  min-height: 100vh;
+}
+
+a {
+  color: #312e81;
+}
+
+.portfolio {
+  width: min(980px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 18px;
+  padding: 1.25rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  animation: fade-up 0.6s ease both;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4f46e5;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.subtitle,
+.contact,
+.muted {
+  margin: 0.3rem 0;
+  color: #334155;
+}
+
+.actions {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.actions a {
+  text-decoration: none;
+  padding: 0.42rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  transition: transform 0.2s ease;
+}
+
+.actions a:hover {
+  transform: translateY(-2px);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #c7d2fe;
+  object-fit: cover;
+  animation: float 3s ease-in-out infinite;
+}
+
+h2,
+h3 {
+  margin: 0 0 0.65rem;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tags li {
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  padding: 0.32rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  animation: pulse 2.8s ease-in-out infinite;
+}
+
+.skills-grid,
+.project-grid,
+.two-col {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.project-grid,
+.two-col {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.project-card,
+.experience-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.85rem;
+}
+
+.two-col ul,
+.repo-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.repo-list li + li {
+  margin-top: 0.7rem;
+}
+
+.repo-list p {
+  margin: 0.15rem 0 0;
+  color: #334155;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+}
